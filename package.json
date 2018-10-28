@@ -1,0 +1,14 @@
+{
+  "name": "demo-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "graphql": "^14.0.2",
+    "graphql-yoga": "^1.16.7",
+    "prisma-client-lib": "^1.19.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.8.0"
+  }
+}
