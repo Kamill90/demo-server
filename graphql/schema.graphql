@@ -1,11 +1,13 @@
 type Query {
   publishedPosts: [Post!]!
   post(postId: ID!): Post
+  getAllUsers: [User!]!
+  getAllPosts: [Post!]!
   postsByUser(userId: ID!): [Post!]!
 }
 
 type Mutation {
-  createUser(name: String!): User
+  createUser(name: String!, password: String!): User
   createDraft(title: String!, userId: ID!): Post
   publish(postId: ID!): Post
 }
@@ -14,7 +16,8 @@ type User {
   id: ID!
   email: String
   name: String!
-  posts: [Post!]!
+  posts: [Post!]
+  password: String!
 }
 
 type Post {

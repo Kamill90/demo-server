@@ -3,6 +3,7 @@ type User {
   email: String @unique
   name: String!
   posts: [Post!]!
+  password: String!
 }
 
 type Post {

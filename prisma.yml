@@ -1,6 +1,10 @@
 endpoint: https://eu1.prisma.sh/kamil-lewandowski/demo-server/dev
 datamodel: datamodel.prisma
 
+hooks:
+  post-deploy:
+    - prisma generate
+
 generate:
   - generator: javascript-client
     output: ./generated/prisma-client/

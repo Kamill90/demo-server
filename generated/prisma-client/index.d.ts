@@ -162,6 +162,8 @@ export type UserOrderByInput =
   | "email_DESC"
   | "name_ASC"
   | "name_DESC"
+  | "password_ASC"
+  | "password_DESC"
   | "createdAt_ASC"
   | "createdAt_DESC"
   | "updatedAt_ASC"
@@ -172,6 +174,7 @@ export type MutationType = "CREATED" | "UPDATED" | "DELETED";
 export interface UserCreateWithoutPostsInput {
   email?: String;
   name: String;
+  password: String;
 }
 
 export type PostWhereUniqueInput = AtLeastOne<{
@@ -186,6 +189,7 @@ export interface PostCreateWithoutAuthorInput {
 export interface UserUpdateWithoutPostsDataInput {
   email?: String;
   name?: String;
+  password?: String;
 }
 
 export interface PostCreateManyWithoutAuthorInput {
@@ -206,6 +210,7 @@ export interface UserCreateInput {
   email?: String;
   name: String;
   posts?: PostCreateManyWithoutAuthorInput;
+  password: String;
 }
 
 export interface UserSubscriptionWhereInput {
@@ -298,6 +303,7 @@ export interface UserUpdateInput {
   email?: String;
   name?: String;
   posts?: PostUpdateManyWithoutAuthorInput;
+  password?: String;
 }
 
 export interface PostUpdateManyWithoutAuthorInput {
@@ -375,6 +381,20 @@ export interface UserWhereInput {
   posts_every?: PostWhereInput;
   posts_some?: PostWhereInput;
   posts_none?: PostWhereInput;
+  password?: String;
+  password_not?: String;
+  password_in?: String[] | String;
+  password_not_in?: String[] | String;
+  password_lt?: String;
+  password_lte?: String;
+  password_gt?: String;
+  password_gte?: String;
+  password_contains?: String;
+  password_not_contains?: String;
+  password_starts_with?: String;
+  password_not_starts_with?: String;
+  password_ends_with?: String;
+  password_not_ends_with?: String;
   AND?: UserWhereInput[] | UserWhereInput;
   OR?: UserWhereInput[] | UserWhereInput;
   NOT?: UserWhereInput[] | UserWhereInput;
@@ -388,6 +408,7 @@ export interface UserPreviousValuesNode {
   id: ID_Output;
   email?: String;
   name: String;
+  password: String;
 }
 
 export interface UserPreviousValues
@@ -396,6 +417,7 @@ export interface UserPreviousValues
   id: () => Promise<ID_Output>;
   email: () => Promise<String>;
   name: () => Promise<String>;
+  password: () => Promise<String>;
 }
 
 export interface UserPreviousValuesSubscription
@@ -404,6 +426,7 @@ export interface UserPreviousValuesSubscription
   id: () => Promise<AsyncIterator<ID_Output>>;
   email: () => Promise<AsyncIterator<String>>;
   name: () => Promise<AsyncIterator<String>>;
+  password: () => Promise<AsyncIterator<String>>;
 }
 
 export interface PageInfoNode {
@@ -433,6 +456,7 @@ export interface UserNode {
   id: ID_Output;
   email?: String;
   name: String;
+  password: String;
 }
 
 export interface User extends Promise<UserNode>, Fragmentable {
@@ -450,6 +474,7 @@ export interface User extends Promise<UserNode>, Fragmentable {
       last?: Int;
     }
   ) => T;
+  password: () => Promise<String>;
 }
 
 export interface UserSubscription
@@ -469,6 +494,7 @@ export interface UserSubscription
       last?: Int;
     }
   ) => T;
+  password: () => Promise<AsyncIterator<String>>;
 }
 
 export interface PostEdgeNode {

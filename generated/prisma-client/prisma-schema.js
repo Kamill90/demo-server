@@ -208,6 +208,7 @@ type User {
   email: String
   name: String!
   posts(where: PostWhereInput, orderBy: PostOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Post!]
+  password: String!
 }
 
 type UserConnection {
@@ -220,6 +221,7 @@ input UserCreateInput {
   email: String
   name: String!
   posts: PostCreateManyWithoutAuthorInput
+  password: String!
 }
 
 input UserCreateOneWithoutPostsInput {
@@ -230,6 +232,7 @@ input UserCreateOneWithoutPostsInput {
 input UserCreateWithoutPostsInput {
   email: String
   name: String!
+  password: String!
 }
 
 type UserEdge {
@@ -244,6 +247,8 @@ enum UserOrderByInput {
   email_DESC
   name_ASC
   name_DESC
+  password_ASC
+  password_DESC
   createdAt_ASC
   createdAt_DESC
   updatedAt_ASC
@@ -254,6 +259,7 @@ type UserPreviousValues {
   id: ID!
   email: String
   name: String!
+  password: String!
 }
 
 type UserSubscriptionPayload {
@@ -278,6 +284,7 @@ input UserUpdateInput {
   email: String
   name: String
   posts: PostUpdateManyWithoutAuthorInput
+  password: String
 }
 
 input UserUpdateOneWithoutPostsInput {
@@ -292,6 +299,7 @@ input UserUpdateOneWithoutPostsInput {
 input UserUpdateWithoutPostsDataInput {
   email: String
   name: String
+  password: String
 }
 
 input UserUpsertWithoutPostsInput {
@@ -345,6 +353,20 @@ input UserWhereInput {
   posts_every: PostWhereInput
   posts_some: PostWhereInput
   posts_none: PostWhereInput
+  password: String
+  password_not: String
+  password_in: [String!]
+  password_not_in: [String!]
+  password_lt: String
+  password_lte: String
+  password_gt: String
+  password_gte: String
+  password_contains: String
+  password_not_contains: String
+  password_starts_with: String
+  password_not_starts_with: String
+  password_ends_with: String
+  password_not_ends_with: String
   AND: [UserWhereInput!]
   OR: [UserWhereInput!]
   NOT: [UserWhereInput!]

@@ -7,6 +7,12 @@ const Query = {
     post(root, args, context) {
       return context.prisma.post({ id: args.postId });
     },
+    getAllUsers(root, args, context) {
+      return context.prisma.users();
+    },
+    getAllPosts(root, args, context) {
+      return context.prisma.posts({ where: { published: true } });
+    },
     postsByUser(root, args, context) {
       return context.prisma
         .user({
