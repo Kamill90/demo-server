@@ -5,4 +5,6 @@
 -Logged in user can like other graphics
 
 
-After changing something in graphql types, update datamode.prisma and run deploy
+After changing something in graphql types, update datamode.prisma and 'yarn deploy'
+
+demo database fields: https://app.prisma.io/kamil-lewandowski/services/prisma-eu1/demo-server/dev/databrowser/User
