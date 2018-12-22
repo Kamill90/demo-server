@@ -8,3 +8,7 @@
 After changing something in graphql types, update datamode.prisma and 'yarn deploy'
 
 demo database fields: https://app.prisma.io/kamil-lewandowski/services/prisma-eu1/demo-server/dev/databrowser/User
+
+
+#business logic
+user needs to have unique email, password and may have a name 
