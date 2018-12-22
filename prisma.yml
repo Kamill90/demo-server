@@ -4,6 +4,10 @@ datamodel: datamodel.prisma
 hooks:
   post-deploy:
     - prisma generate
+    - echo "Deployment finished"
+    - graphql get-schema --project prisma
+    - graphql get-schema --project db
+    - graphql prepare
 
 generate:
   - generator: javascript-client

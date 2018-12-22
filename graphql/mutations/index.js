@@ -2,6 +2,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
 const { prisma } = require("../../generated/prisma-client");
+const SECRET = "qwe123gdfs324";
 
 const Mutation = {
   createDraft(root, args, context) {
@@ -19,7 +20,6 @@ const Mutation = {
     });
   },
   async createUser(root, args, context) {
-    const SECRET = "qwe123gdfs324";
     let { password } = args;
     if (password.length < 8) {
       throw new Error("Password must be at lease 8 characters long");
@@ -27,6 +27,7 @@ const Mutation = {
     password = await bcrypt.hash(password, 10);
 
     const user = await context.prisma.createUser({
+      email: args.email,
       name: args.name,
       password: password
     });
@@ -36,15 +37,15 @@ const Mutation = {
       token: jwt.sign({ user }, SECRET)
     };
   },
-  async login(root, { name, password }, { prisma }, info) {
-    const user = await prisma.user({where: {id: "cjprgp9b6xn8s0a00etl2vpn2"}});
-
-    console.log("user", user);
-    return user;
-
+  async login(root, { email, password }, { prisma }, info) {
+    const user = await prisma.user({email});
+    console.log('user',user)
+    if(!user) {
+      throw new Error('unable to login')
+    }
     return {
       token: jwt.sign({ user }, SECRET)
-    };
+    }
   }
 };
 

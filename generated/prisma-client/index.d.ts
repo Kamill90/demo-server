@@ -172,8 +172,8 @@ export type UserOrderByInput =
 export type MutationType = "CREATED" | "UPDATED" | "DELETED";
 
 export interface UserCreateWithoutPostsInput {
-  email?: String;
-  name: String;
+  email: String;
+  name?: String;
   password: String;
 }
 
@@ -207,8 +207,8 @@ export interface UserUpdateOneWithoutPostsInput {
 }
 
 export interface UserCreateInput {
-  email?: String;
-  name: String;
+  email: String;
+  name?: String;
   posts?: PostCreateManyWithoutAuthorInput;
   password: String;
 }
@@ -406,8 +406,8 @@ export interface NodeNode {
 
 export interface UserPreviousValuesNode {
   id: ID_Output;
-  email?: String;
-  name: String;
+  email: String;
+  name?: String;
   password: String;
 }
 
@@ -454,8 +454,8 @@ export interface PageInfoSubscription
 
 export interface UserNode {
   id: ID_Output;
-  email?: String;
-  name: String;
+  email: String;
+  name?: String;
   password: String;
 }
 
