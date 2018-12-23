@@ -2,13 +2,5 @@ type User {
   id: ID! @unique
   email: String! @unique
   name: String
-  posts: [Post!]!
   password: String!
-}
-
-type Post {
-  id: ID! @unique
-  title: String!
-  published: Boolean! @default(value: "false")
-  author: User
 }

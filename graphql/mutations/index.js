@@ -6,28 +6,12 @@ const getUserId = require("../utils");
 const { prisma } = require("../../generated/prisma-client");
 
 const Mutation = {
-  createDraft(root, args, context) {
-    return context.prisma.createPost({
-      title: args.title,
-      author: {
-        connect: { id: args.userId }
-      }
-    });
-  },
-  publish(root, args, context) {
-    return context.prisma.updatePost({
-      where: { id: args.postId },
-      data: { published: true }
-    });
-  },
   async updateUser(root, { name }, { prisma, request }) {
     const userId = getUserId(request);
 
     const user = await prisma.updateUser({data: {name}, where: { id: userId}});
 
-    return {
-      ...user
-    }
+    return user
   },
   async createUser(root, { email, name, password }, { prisma }) {
     if (password.length < 8) {

@@ -1,35 +1,21 @@
 type Query {
-  publishedPosts: [Post!]!
-  post(postId: ID!): Post
   getAllUsers: [User!]!
-  getAllPosts: [Post!]!
-  postsByUser(userId: ID!): [Post!]!
 }
 
 type Mutation {
   createUser(email: String!, name: String password: String!): AuthPayload
   login(email: String!,password: String!): AuthPayload
   updateUser(name: String!): User
-  createDraft(title: String!, userId: ID!): Post
-  publish(postId: ID!): Post
 }
 
 type User {
   id: ID!
   email: String!
   name: String
-  posts: [Post!]
   password: String!
 }
 
 type AuthPayload {
   user: User!
   token: String!
-}
-
-type Post {
-  id: ID!
-  title: String!
-  published: Boolean!
-  author: User
 }
