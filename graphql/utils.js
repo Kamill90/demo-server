@@ -1,8 +1,8 @@
 const jwt = require("jsonwebtoken");
 const { clientSecret } = require("../assets/secrets");
 
-const getUserId = requst => {
-  const header = requst.requst.headers.authorization;
+const getUserId = request => {
+  const header = request.request.headers.authorization;
 
   if (!header) {
       throw new Error('Authorization is required')
@@ -10,8 +10,8 @@ const getUserId = requst => {
 
   const token = header.split(" ")[1];
   const decoded = jwt.verify(token, clientSecret);
-  console.log("decoded", decoded);
-  return decoded.userId;
+  
+  return decoded.user.id;
 };
 
 module.exports = getUserId

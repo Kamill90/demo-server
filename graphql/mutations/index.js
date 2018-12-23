@@ -20,9 +20,14 @@ const Mutation = {
       data: { published: true }
     });
   },
-  async updateUser(root, args, { prisma, reqest }) {
-    const userId = getUserId(reqest);
-    console.log('id', userId)
+  async updateUser(root, { name }, { prisma, request }) {
+    const userId = getUserId(request);
+
+    const user = await prisma.updateUser({data: {name}, where: { id: userId}});
+
+    return {
+      ...user
+    }
   },
   async createUser(root, { email, name, password }, { prisma }) {
     if (password.length < 8) {
