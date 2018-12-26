@@ -3,4 +3,11 @@ type User {
   email: String! @unique
   name: String
   password: String!
+  posts: [Post]
+}
+
+type Post {
+  id: ID! @unique
+  title: String!
+  author: User
 }

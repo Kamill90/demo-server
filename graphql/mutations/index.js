@@ -3,15 +3,32 @@ const jwt = require("jsonwebtoken");
 const { clientSecret } = require("../../assets/secrets");
 const getUserId = require("../utils");
 
-const { prisma } = require("../../generated/prisma-client");
-
 const Mutation = {
+  async createPost(root, { title }, { prisma, request }) {
+    const userId = getUserId(request);
+    if (!userId) {
+      throw new Error("authorization is required");
+    }
+    
+    const post = await prisma.createPost({
+      title,
+      author: {
+        connect: {
+          id: userId,
+        }
+      }
+    });
+    return post;
+  },
   async updateUser(root, { name }, { prisma, request }) {
     const userId = getUserId(request);
 
-    const user = await prisma.updateUser({data: {name}, where: { id: userId}});
+    const user = await prisma.updateUser({
+      data: { name },
+      where: { id: userId }
+    });
 
-    return user
+    return user;
   },
   async createUser(root, { email, name, password }, { prisma }) {
     if (password.length < 8) {
@@ -24,7 +41,7 @@ const Mutation = {
       name,
       password
     });
-
+    
     return {
       user,
       token: jwt.sign({ user }, clientSecret)
