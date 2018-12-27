@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "start": "nodemon index.js",
-    "deploy": "prisma deploy"
+    "deploy:dev": "prisma deploy -e ./config/dev.env",
+    "deploy:prod": "prisma deploy -e ./config/prod.env"
   },
   "dependencies": {
     "bcrypt": "^3.0.2",

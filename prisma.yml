@@ -1,4 +1,4 @@
-endpoint: https://eu1.prisma.sh/kamil-lewandowski/demo-server/dev
+endpoint: ${env:PRISMA_ENDPOINT}
 datamodel: datamodel.prisma
 
 hooks:
