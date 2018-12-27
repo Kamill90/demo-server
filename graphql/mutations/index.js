@@ -49,10 +49,15 @@ const Mutation = {
   },
   async login(root, { email, password }, { prisma }) {
     const user = await prisma.user({ email });
-    //WTF? Check if
     if (!user) {
-      throw new Error('unable to login');
+      throw new Error('there is no user with this mail address');
     }
+
+    const match = await bcrypt.compare(password, user.password);
+    if (!match) {
+      throw new Error('wrong password');
+    }
+
     return {
       user,
       token: jwt.sign({ user }, clientSecret),
