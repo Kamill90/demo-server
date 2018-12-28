@@ -5,6 +5,6 @@ var typeDefs = require("./prisma-schema").typeDefs;
 
 exports.Prisma = prisma_lib_1.makePrismaClientClass({
   typeDefs,
-  endpoint: `https://eu1.prisma.sh/kamil-lewandowski/demo-server/prod`
+  endpoint: `https://kl-demo-server-5da8d6f420.herokuapp.com/demo-server/dev`
 });
 exports.prisma = new exports.Prisma();

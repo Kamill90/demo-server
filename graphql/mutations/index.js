@@ -39,7 +39,7 @@ const Mutation = {
     const user = await prisma.createUser({
       email,
       name,
-      hashedPassword,
+      password: hashedPassword,
     });
 
     return {
