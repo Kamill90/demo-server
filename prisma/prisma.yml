@@ -1,5 +1,4 @@
-#endpoint: ${env:PRISMA_ENDPOINT}
-endpoint: http://localhost:4466
+endpoint: ${env:PRISMA_ENDPOINT}
 datamodel: datamodel.prisma
 
 hooks:
@@ -12,4 +11,4 @@ hooks:
 
 generate:
   - generator: javascript-client
-    output: ./generated/prisma-client/
+    output: ../generated/prisma-client/

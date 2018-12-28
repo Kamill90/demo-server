@@ -1,7 +1,0 @@
-{
-  "projects": {
-    "demo-server": {
-      "schemaPath": "schema.graphql"
-    }
-  }
-}

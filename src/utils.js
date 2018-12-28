@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const { clientSecret } = require('../assets/secrets');
+const { clientSecret } = require('./assets/secrets');
 
 const getUserId = (request) => {
   const header = request.request.headers.authorization;

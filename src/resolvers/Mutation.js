@@ -1,6 +1,6 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const { clientSecret } = require('../../assets/secrets');
+const clientSecret = require('../assets/secrets');
 const getUserId = require('../utils');
 
 const Mutation = {
