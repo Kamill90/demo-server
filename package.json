@@ -7,7 +7,8 @@
     "start": "nodemon index.js",
     "deploy:dev": "prisma deploy -e ./config/dev.env",
     "deploy:prod": "prisma deploy -e ./config/prod.env",
-    "deploy:local": "prisma deploy -e ./config/local.env"
+    "deploy:local": "prisma deploy -e ./config/local.env",
+    "get-schema": "graphql get-schema -p prisma"
   },
   "dependencies": {
     "bcrypt": "^3.0.2",
