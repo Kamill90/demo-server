@@ -36,10 +36,12 @@ const Mutation = {
     }
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    const user = await prisma.createUser({
-      email,
-      name,
-      password: hashedPassword,
+    const user = await prisma.mutation.createUser({
+      data: {
+        email,
+        name,
+        password: hashedPassword,
+      },
     });
 
     return {

@@ -1,4 +1,4 @@
-const Prisma = require('prisma-binding');
+const { Prisma } = require('prisma-binding');
 
 const prisma = new Prisma({
   typeDefs: 'src/generated/prisma.graphql',
@@ -6,4 +6,4 @@ const prisma = new Prisma({
   secret: 'qwe123gdfs324',
 });
 
-module.exports = prisma;
+module.exports = { prisma };

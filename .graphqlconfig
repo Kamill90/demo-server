@@ -4,6 +4,7 @@
             "schemaPath": "src/generated/prisma.graphql",
             "extension": {
                 "endpoints": {
+                    "prisma": "prisma/prisma.yml",
                     "default": "http://localhost:4466"
                 }
             }
