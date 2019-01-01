@@ -4,32 +4,6 @@ const clientSecret = require('../assets/secrets');
 const getUserId = require('../utils');
 
 const Mutation = {
-  async createPost(root, { title }, { prisma, request }) {
-    const userId = getUserId(request);
-    if (!userId) {
-      throw new Error('authorization is required');
-    }
-
-    const post = await prisma.createPost({
-      title,
-      author: {
-        connect: {
-          id: userId,
-        },
-      },
-    });
-    return post;
-  },
-  async updateUser(root, { name }, { prisma, request }) {
-    const userId = getUserId(request);
-
-    const user = await prisma.updateUser({
-      data: { name },
-      where: { id: userId },
-    });
-
-    return user;
-  },
   async createUser(root, { email, name, password }, { prisma }) {
     if (password.length < 8) {
       throw new Error('Password must be at lease 8 characters long');
@@ -50,7 +24,7 @@ const Mutation = {
     };
   },
   async login(root, { email, password }, { prisma }) {
-    const user = await prisma.user({ email });
+    const user = await prisma.query.user({ where: { email } });
     if (!user) {
       throw new Error('there is no user with this mail address');
     }
@@ -64,6 +38,29 @@ const Mutation = {
       user,
       token: jwt.sign({ user }, clientSecret),
     };
+  },
+  async updateUser(root, { name }, { prisma, request }) {
+    const userId = getUserId(request);
+
+    const user = await prisma.mutation.updateUser({
+      data: { name },
+      where: { id: userId },
+    });
+
+    return user;
+  },
+  async createPost(root, { title }, { prisma, request }) {
+    const userId = getUserId(request);
+    if (!userId) {
+      throw new Error('authorization is required');
+    }
+
+    const post = await prisma.mutation.createPost({
+      data: {
+        title,
+      },
+    });
+    return post;
   },
 };
 
