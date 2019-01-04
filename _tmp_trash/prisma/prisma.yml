@@ -1,4 +1,5 @@
-endpoint: http://localhost:4466
+#endpoint: ${env:PRISMA_ENDPOINT}
+endpoint: https://kl-demo-server-809ad99f2d.herokuapp.com/kl-demo-server/prod
 datamodel: datamodel.prisma
 secret: qwe123gdfs324
 
