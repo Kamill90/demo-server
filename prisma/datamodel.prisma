@@ -1,13 +1,12 @@
 type User {
   id: ID! @unique
-  email: String! @unique
+  email: String!
   name: String
   password: String!
-  posts: [Post!]!
 }
 
 type Post {
-  id: ID! @unique @id
+  id: ID! @unique
   title: String!
   author: User
 }

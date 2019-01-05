@@ -1,7 +1,8 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const clientSecret = require('../assets/secrets');
 const getUserId = require('../utils');
+
+const clientSecret = 'qwe123gdfs324';
 
 const Mutation = {
   async createUser(root, { email, name, password }, { prisma }) {

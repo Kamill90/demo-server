@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken');
-const clientSecret = require('./assets/secrets');
+
+const clientSecret = 'qwe123gdfs324';
 
 const getUserId = (request) => {
   const header = request.request.headers.authorization;
