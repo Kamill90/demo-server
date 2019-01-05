@@ -1,4 +1,4 @@
-endpoint: http://localhost:4466
+endpoint: https://kl-demo-server-app-ad7dd44ddd.herokuapp.com/kl-demo-server-app/dev
 datamodel: datamodel.prisma
 generate:
   - generator: javascript-client
