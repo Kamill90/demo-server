@@ -1022,9 +1022,9 @@ graceful-fs@^4.1.2:
   version "4.1.15"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.1.15.tgz#ffb703e1066e8a0eeaa4c8b80ba9253eeefbfb00"
 
-graphql-binding@2.3.7:
-  version "2.3.7"
-  resolved "https://registry.yarnpkg.com/graphql-binding/-/graphql-binding-2.3.7.tgz#2480d9ae4582ab1fbedb3ab1ae67963f82a8b028"
+graphql-binding@2.4.1:
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/graphql-binding/-/graphql-binding-2.4.1.tgz#5880b78670b5910b3589a6fa76441e9a7d8c289c"
   dependencies:
     graphql "^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0"
     graphql-import "^0.7.1"
@@ -1896,16 +1896,16 @@ prettier@^1.14.3:
   version "1.14.3"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.14.3.tgz#90238dd4c0684b7edce5f83b0fb7328e48bd0895"
 
-prisma-binding@^2.2.11:
-  version "2.2.11"
-  resolved "https://registry.yarnpkg.com/prisma-binding/-/prisma-binding-2.2.11.tgz#af82e3f83615c09582d6e8f5567b1569f3712ace"
+prisma-binding@^2.1.5:
+  version "2.2.14"
+  resolved "https://registry.yarnpkg.com/prisma-binding/-/prisma-binding-2.2.14.tgz#f21ce8e4fb0034c9dec8b39919cec241bbdf74df"
   dependencies:
     apollo-link "1.2.6"
     apollo-link-error "1.1.5"
     apollo-link-ws "1.0.12"
     cross-fetch "3.0.0"
     graphql "^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0"
-    graphql-binding "2.3.7"
+    graphql-binding "2.4.1"
     graphql-import "0.7.1"
     graphql-tools "4.0.3"
     http-link-dataloader "^0.1.6"
