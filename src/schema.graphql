@@ -1,6 +1,7 @@
 type Query {
   getAllUsers: [User!]!
   getMe: User
+  getSomething: String
 }
 
 type Mutation {
