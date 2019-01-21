@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "nodemon src/index.js",
     "deploy:dev": "prisma deploy -e ../config/dev.env",
     "deploy:prod": "prisma deploy -e ../config/prod.env",
     "deploy:local": "prisma deploy -e ../config/local.env",
@@ -13,9 +13,9 @@
   "dependencies": {
     "bcrypt": "^3.0.2",
     "graphql": "^14.0.2",
-    "graphql-yoga": "^1.16.7",
     "jsonwebtoken": "^8.4.0",
-    "prisma-client-lib": "^1.22.2"
+    "graphql-yoga": "^1.3.2",
+    "prisma-binding": "^1.5.10"
   },
   "devDependencies": {
     "eslint": "^5.11.1",
