@@ -13,20 +13,6 @@ type Mutation {
   updateUser(name: String!): User
 }
 
-# type User {
-#   id: ID!
-#   email: String!
-#   name: String
-#   password: String!
-#   posts: [Post!]!
-# }
-
-# type Post {
-#   id: ID!
-#   title: String!
-#   author: User
-# }
-
 type AuthPayload {
   user: User!
   token: String!
