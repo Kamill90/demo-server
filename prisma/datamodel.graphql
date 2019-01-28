@@ -10,4 +10,4 @@
    id: ID! @unique
    title: String!
    author: User
-}
+}                                                                                                      

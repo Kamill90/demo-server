@@ -1,11 +1,15 @@
 endpoint: https://demo-server-db-fb6ed0d759.herokuapp.com/prisma-demo-server-db/dev
-datamodel: datamodel.prisma
+datamodel: datamodel.graphql
 secret: qwe123gdfs324
-
-generate:
-  - generator: javascript-client
-    output: ./generated/prisma-client/
 
 hooks:
   post-deploy:
-    - prisma generate
+    - graphql get-schema
+
+# generate:
+#   - generator: javascript-client
+#     output: ../src/generated/prisma-client/
+
+# hooks:
+#   post-deploy:
+#     - prisma generate

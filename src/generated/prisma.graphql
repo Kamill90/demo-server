@@ -1,5 +1,5 @@
-# source: https://us1.prisma.sh/kamil-lewandowski/prisma/dev
-# timestamp: Thu Jan 17 2019 00:03:49 GMT+0100 (CET)
+# source: https://demo-server-db-fb6ed0d759.herokuapp.com/prisma-demo-server-db/dev
+# timestamp: Mon Jan 28 2019 22:29:46 GMT+0100 (CET)
 
 type AggregatePost {
   count: Int!
@@ -263,7 +263,6 @@ input PostUpdateManyMutationInput {
 input PostUpdateManyWithoutAuthorInput {
   create: [PostCreateWithoutAuthorInput!]
   connect: [PostWhereUniqueInput!]
-  set: [PostWhereUniqueInput!]
   disconnect: [PostWhereUniqueInput!]
   delete: [PostWhereUniqueInput!]
   update: [PostUpdateWithWhereUniqueWithoutAuthorInput!]
