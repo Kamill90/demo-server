@@ -5,11 +5,3 @@ secret: qwe123gdfs324
 hooks:
   post-deploy:
     - graphql get-schema
-
-# generate:
-#   - generator: javascript-client
-#     output: ../src/generated/prisma-client/
-
-# hooks:
-#   post-deploy:
-#     - prisma generate

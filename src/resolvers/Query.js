@@ -14,9 +14,6 @@ const Query = {
 
     return user;
   },
-  getSomething() {
-    return 'something';
-  },
 };
 
 module.exports = { Query };

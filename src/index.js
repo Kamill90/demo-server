@@ -4,10 +4,10 @@ const { Prisma } = require('prisma-binding');
 const { resolvers } = require('./resolvers');
 
 const prisma = new Prisma({
-  typeDefs: 'src/generated/prisma.graphql', // the generated Prisma DB schema
-  endpoint: 'https://demo-server-db-fb6ed0d759.herokuapp.com/prisma-demo-server-db/dev', // the endpoint of the Prisma DB service
-  secret: 'qwe123gdfs324', // specified in database/prisma.yml
-  debug: false, // log all GraphQL queries & mutations
+  typeDefs: 'src/generated/prisma.graphql',
+  endpoint: 'https://demo-server-db-fb6ed0d759.herokuapp.com/prisma-demo-server-db/dev',
+  secret: 'qwe123gdfs324',
+  debug: false,
 });
 
 const server = new GraphQLServer({

@@ -1,5 +1,5 @@
 # source: https://demo-server-db-fb6ed0d759.herokuapp.com/prisma-demo-server-db/dev
-# timestamp: Mon Jan 28 2019 22:29:46 GMT+0100 (CET)
+# timestamp: Tue Jan 29 2019 23:05:08 GMT+0100 (CET)
 
 type AggregatePost {
   count: Int!
@@ -722,4 +722,5 @@ input UserWhereInput {
 
 input UserWhereUniqueInput {
   id: ID
+  email: String
 }
