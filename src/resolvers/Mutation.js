@@ -1,5 +1,6 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+
 const getUserId = require('../utils');
 
 const clientSecret = 'qwe123gdfs324';
