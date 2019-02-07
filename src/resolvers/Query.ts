@@ -1,6 +1,6 @@
-const getUserId = require('../utils');
+import * as getUserId from '../utils';
 
-const Query = {
+export const Query = {
     getAllUsers(root, args, { prisma }, info) {
         return prisma.query.users(null, info);
     },
@@ -15,5 +15,3 @@ const Query = {
         return user;
     },
 };
-
-module.exports = { Query };

@@ -1,11 +1,11 @@
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
+import * as bcrypt from 'bcrypt';
+import * as jwt from 'jsonwebtoken';
 
-const getUserId = require('../utils');
+import * as getUserId from '../utils';
 
 const clientSecret = 'qwe123gdfs324';
 
-const Mutation = {
+export const Mutation = {
   async createUser(root, { email, name, password }, { prisma }) {
     if (password.length < 8) {
       throw new Error('Password must be at lease 8 characters long');
@@ -65,5 +65,3 @@ const Mutation = {
     return post;
   },
 };
-
-module.exports = { Mutation };

@@ -1,4 +1,4 @@
-const jwt = require('jsonwebtoken');
+import * as jwt from 'jsonwebtoken';
 
 const clientSecret = 'qwe123gdfs324';
 
@@ -14,4 +14,4 @@ const getUserId = (request) => {
   return decoded.user.id;
 };
 
-module.exports = getUserId;
+export default getUserId;
