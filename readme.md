@@ -18,6 +18,6 @@ user needs to have unique email, password and may have a name
 
 #backlog
 1. Deploy to heroku demo-server. 
-2. Add typescript, tests, babel
+2. Add typescript
 3. Add lacking functions - proper queries, linking other posts.
 4. Add file upload functionality.

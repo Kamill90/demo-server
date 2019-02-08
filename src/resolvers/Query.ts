@@ -1,4 +1,4 @@
-import * as getUserId from '../utils';
+import getUserId from '../utils';
 
 export const Query = {
     getAllUsers(root, args, { prisma }, info) {

@@ -1,7 +1,7 @@
 import * as bcrypt from 'bcrypt';
 import * as jwt from 'jsonwebtoken';
 
-import * as getUserId from '../utils';
+import getUserId from '../utils';
 
 const clientSecret = 'qwe123gdfs324';
 

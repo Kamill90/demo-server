@@ -8,7 +8,8 @@
             "esnext"
         ],
         "target": "es5",
-        "outDir": "build"
+        "outDir": "dist",
+        "strict": false,
     },
     "include": [
         "src/**/*"
