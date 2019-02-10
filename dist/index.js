@@ -16,7 +16,7 @@ var prisma_binding_1 = require("prisma-binding");
 var resolvers_1 = require("./resolvers");
 var prisma = new prisma_binding_1.Prisma({
     typeDefs: 'src/generated/prisma.graphql',
-    endpoint: 'https://demo-server-db-fb6ed0d759.herokuapp.com/prisma-demo-server-db/dev',
+    endpoint: process.env.PRISMA_ENDPOINT,
     secret: 'qwe123gdfs324',
     debug: false,
 });
@@ -25,4 +25,4 @@ var server = new graphql_yoga_1.GraphQLServer({
     resolvers: resolvers_1.resolvers,
     context: function (req) { return (__assign({}, req, { prisma: prisma })); },
 });
-server.start(function () { return console.log('Server is up'); });
+server.start({ port: process.env.PORT || 4000 }, function () { return console.log('Server is up'); });

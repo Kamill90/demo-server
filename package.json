@@ -9,7 +9,11 @@
     "yarn": "1.7.0"
   },
   "scripts": {
-    "start": "env-cmd ./config/prod.env node dist/index.js"
+    "start": "env-cmd ./config/prod.env node dist/index.js",
+    "start:dev": "env-cmd ./config/dev.env nodemon dist/index.js",
+    "ts-compile": "tsc",
+    "prisma:deploy:dev": "prisma deploy -e ./config/dev.env",
+    "prisma:deploy:prod": "prisma deploy -e ./config/prod.env"
   },
   "dependencies": {
     "bcrypt": "^3.0.2",

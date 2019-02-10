@@ -3,7 +3,7 @@ import * as jwt from 'jsonwebtoken';
 
 import getUserId from '../utils';
 
-const clientSecret = 'qwe123gdfs324';
+const JWT_SECRET = process.env.JWT_SECRET;
 
 export const Mutation = {
   async createUser(root, { email, name, password }, { prisma }) {
@@ -22,7 +22,7 @@ export const Mutation = {
 
     return {
       user,
-      token: jwt.sign({ user }, clientSecret),
+      token: jwt.sign({ user }, JWT_SECRET),
     };
   },
   async login(root, { email, password }, { prisma }) {
@@ -38,7 +38,7 @@ export const Mutation = {
 
     return {
       user,
-      token: jwt.sign({ user }, clientSecret),
+      token: jwt.sign({ user }, JWT_SECRET),
     };
   },
   async updateUser(root, { name }, { prisma, request }) {

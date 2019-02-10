@@ -1,6 +1,6 @@
 import * as jwt from 'jsonwebtoken';
 
-const clientSecret = 'qwe123gdfs324';
+const JWT_SECRET = process.env.JWT_SECRET;
 
 interface Request {
   request: any,
@@ -14,7 +14,7 @@ const getUserId = (request: Request): any => {
   }
 
   const token = header.replace('Bearer ', '');
-  const { userId } = jwt.verify(token, clientSecret) as { userId: string }
+  const { userId } = jwt.verify(token, JWT_SECRET) as { userId: string }
   return userId
 };
 

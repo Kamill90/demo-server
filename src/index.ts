@@ -5,8 +5,8 @@ import { resolvers } from './resolvers';
 
 const prisma = new Prisma({
     typeDefs: 'src/generated/prisma.graphql',
-    endpoint: 'https://demo-server-db-fb6ed0d759.herokuapp.com/prisma-demo-server-db/dev',
-    secret: 'qwe123gdfs324',
+    endpoint: process.env.PRISMA_ENDPOINT,
+    secret: process.env.PRISMA_SECRET,
     debug: false,
 });
 
@@ -19,4 +19,4 @@ const server = new GraphQLServer({
     }),
 });
 
-server.start({ port: process.env.PORT }, () => console.log('Server is up'));
+server.start({ port: process.env.PORT || 4000 }, () => console.log('Server is up'));
